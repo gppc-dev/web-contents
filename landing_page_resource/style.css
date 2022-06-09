@@ -1,0 +1,13 @@
+.row {
+    width: 100%;
+}
+.block {
+vertical-align: top;
+width: 200px;
+display: inline-block;
+text-align: center;
+}
+.description-block{
+    text-align:left;
+    margin: 5px;
+}
