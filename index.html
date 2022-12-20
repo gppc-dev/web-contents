@@ -20,56 +20,86 @@
       <div class="left-column">
         <div class="row">
           <h2>The Competition</h2>
-          <p>Grid-based Path Planning is a widely studied topic with many practical applications, such as robotics and computer games.
-             It simplicity also makes it an excellent testbed for algorithmic evaluation.
-              Many papers appear on this topic every year. The purpose of GPPC<sup>2</sup> is to provide a common
-               experimental setup that allows researchers and practitioners to evaluate progress in the area.
-               <br><br>The GPPC<sup>2</sup> is the fourth edition of the competition, with previous <a href="https://movingai.com/GPPC/">competitions in 2012, 2013 and 2014</a>.</p>
+          <p>Computing paths for moving agents is a core challenge in many application areas, such as robotics and computer games. 
+            Grid-based models offer a simple and effective way to tackle this problem, with many new works appearing throughout the 
+            academic literature. Research in this area is most often motivated by practical considerations, and the resulting algorithmic 
+            techniques usually come with tradeoffs, such as solution quality vs. runtime performance vs. compute resource costs 
+            (CPU, memory etc.). The Grid-Based Path Planning Competition (GPPC<sup>2</sup>) is a forum for tracking and disseminating state-of-the-art 
+            progress in the area. It is the fourth edition of the competition, with previous <a href="https://movingai.com/GPPC/">competitions in 2012, 2013 and 2014</a>.</p>
+          <p>
+            The goals of the competition are: 
+            <ul>
+              <li>To identify important topics in Grid-based Path Planning and to establish clear baselines for state-of-the-art performance.</li>
+              <li>To promote best practice for experimental evaluation, including suitable metrics, analysis methods and benchmarking techniques.</li>
+              <li>To disseminate results to the broader community and track progress over time.</li>
+              <li>To promote and grow research in the area of Grid-based Path Planning.</li>
+            </ul>
+          </p>
+          <p>
+            We invite submissions from established researchers, active practitioners and interested students. Participation in the competition 
+            can help to grow confidence in the practical suitability of existing (in-production) methods or in newly proposed algorithmic techniques. 
+          </p>
         </div>
-    
+        
+        <div class="row">
+          <h2>Competition Setup</h2>
+          <p>GPPC<sup>2</sup> currently measures progress in two distinct tracks:
+            <ul>
+              <li>Classical track, which is 8-connected pathfinding on a static grid map
+              </li>
+              <li>
+                Any-angle track, where grid paths are not restricted to eight directions.
+              </li>
+            </ul>
+          </p>
+          <p>
+            Both tracks run continuously and submissions are welcome at any time. Participants can submit multiple times and their submission will be evaluated automatically. Results are available in real-time and progress in the competition is indicated using a live leaderboard. 
+          </p>
+          <p>
+            On an annual basis a snapshot of results will be taken and used to create a report. This report will summarise the advances made through the year and the current state of the art. A summary of these results will be presented at the next edition of the International Symposium on Combinatorial Search (SoCS).
+          </p>
+        </div>
+        
         <div class="row">
           <h2>How to Participate</h2>
           <ul>
-            <li>Login with a Github account.</li>
-            <li>Download our start kit for the <a href="https://github.com/gppc-dev/startkit/tree/master">classic</a> or <a href="https://github.com/gppc-dev/startkit/tree/anyangle">anyangle</a> track.</li>
-            <li>Read the submission instruction of each track.</li>
+            <li>Login with your Github account.</li>
+            <li>Download the start kit for the <a href="https://github.com/gppc-dev/startkit/tree/master">classic</a> or <a href="https://github.com/gppc-dev/startkit/tree/anyangle">anyangle</a> track.</li>
+            <li>Read the submission instructions and integrate your solving technique.</li>
             <li>Submit your first entry!</li>
-            <li>View leaderboards of existing entries on Grid Based and Anyangle Page.</li>
+            <li>Track your progress via the leaderboard!</li>
           </ul>
         </div>
-
+        
         <div class="row">
-          <h2>How the Competition Runs</h2>
-          <p>
-            The GPPC<sup>2</sup> competition will run continuously until an annual report deadline. Submissions are welcome at any time before the deadline. 
-            Participants can submit multiple times before the deadline and their submission will be graded automatically.
-          </p>
-          <p>
-            The system will evaluate submissions over a set of benchmark problems. 
-            The evaluation includes three phases: 1) Preprocessing Phase. 2) Validation Phase. 3) Benchmark Phase.
-            The preprocessing phase allows submissions supporting preprocessing to preprocess each benchmark map. 
-            The validation phase feeds problem instances to submissions and validates their solution. 
-            The benchmark phase times the running time of submissions. 
-          </p>
-          <p>
-            Successful submissions will be listed on the leaderboard, together with all other solutions.
-          </p>
+          <h2>Evaluation</h2>
+          <p>All GPPC<sup>2</sup> submissions are evaluated using a standard benchmark problem set. These problems comprise grid maps and 
+            pathfinding instances that are drawn from real applications and/or which are synthetically generated.</p>
+          <p>The evaluation process is threefold: (i) (optional) offline preprocessing, where auxiliary data can be generated; 
+            (ii) offline validation, which checks that every test problem can be successfully solved and; (iii) online evaluation, where 
+            algorithmic performance is measured according to several distinct metrics (see our website for the full details). A submission 
+            is considered successful if it passes validation and solves every problem during evaluation.</p>
         </div>
 
         <div class="row">
-          <h2>Winner Selection</h2>
+          <h2>Ranking and Results</h2>
           <p>
-            There will be no winner for GPPC<sup>2</sup>. 
-            However, we will report pareto frontiers in our annual report. 
-            The authors of frontier solutions will be invited to write the report together. 
-            The annual report will be published in the International Symposium on Combinatorial Search (SoCS).
+            In GPPC<sup>2</sup> there is no single winner but a pareto-frontier of undominated entries. 
+            This approach reflects the many distinct settings where Grid-based Path Planning is applied, 
+            and where performance is often regarded from different perspectives. 
+          </p>
+            Authors of successful submissions, which are undominated for any period during a given year, 
+            will be invited to co-author the annual report. The report will appear in the archival proceedings 
+            of the International Symposium on Combinatorial Search (SoCS).
+          <p>
+
           </p>
         </div>
 
         <div class="row">
           <h2>Important Dates</h2>
-          <p><b>Submission Deadline:</b> No Deadlines! Submit now!</p>
-          <p><b>Annual Report Deadline:</b> 1st June of every year, for inclusion in the SoCS annual report.          </p>
+          <p><b>Submission Deadline:</b> None! Submit anytime!</p>
+          <p><b>Annual Report Deadline:</b> to be eligible for inclusion in the next annual report, undominated submissions must be received by 1st May.          </p>
         </div>        
 
 
