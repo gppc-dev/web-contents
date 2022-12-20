@@ -16,133 +16,136 @@
     <div class="row text-center">
       <h1>GPPC<sup>2</sup></h1>
     </div>
-    <div class="GridRow">
-      <div class="left-column">
-        <div class="row">
-          <h2>The Competition</h2>
-          <p>Computing paths for moving agents is a core challenge in many application areas, such as robotics and computer games. 
-            Grid-based models offer a simple and effective way to tackle this problem, with many new works appearing throughout the 
-            academic literature. Research in this area is most often motivated by practical considerations, and the resulting algorithmic 
-            techniques usually come with tradeoffs, such as solution quality vs. runtime performance vs. compute resource costs 
-            (CPU, memory etc.). The Grid-Based Path Planning Competition (GPPC<sup>2</sup>) is a forum for tracking and disseminating state-of-the-art 
-            progress in the area. It is the fourth edition of the competition, with previous <a href="https://movingai.com/GPPC/">competitions in 2012, 2013 and 2014</a>.</p>
-          <p>
-            The goals of the competition are: 
-            <ul>
-              <li>To identify important topics in Grid-based Path Planning and to establish clear baselines for state-of-the-art performance.</li>
-              <li>To promote best practice for experimental evaluation, including suitable metrics, analysis methods and benchmarking techniques.</li>
-              <li>To disseminate results to the broader community and track progress over time.</li>
-              <li>To promote and grow research in the area of Grid-based Path Planning.</li>
-            </ul>
-          </p>
-          <p>
-            We invite submissions from established researchers, active practitioners and interested students. Participation in the competition 
-            can help to grow confidence in the practical suitability of existing (in-production) methods or in newly proposed algorithmic techniques. 
-          </p>
-        </div>
-        
-        <div class="row">
-          <h2>Competition Setup</h2>
-          <p>GPPC<sup>2</sup> currently measures progress in two distinct tracks:
-            <ul>
-              <li>Classical track, which is 8-connected pathfinding on a static grid map
-              </li>
-              <li>
-                Any-angle track, where grid paths are not restricted to eight directions.
-              </li>
-            </ul>
-          </p>
-          <p>
-            Both tracks run continuously and submissions are welcome at any time. Participants can submit multiple times and their submission will be evaluated automatically. Results are available in real-time and progress in the competition is indicated using a live leaderboard. 
-          </p>
-          <p>
-            On an annual basis a snapshot of results will be taken and used to create a report. This report will summarise the advances made through the year and the current state of the art. A summary of these results will be presented at the next edition of the International Symposium on Combinatorial Search (SoCS).
-          </p>
-        </div>
-        
-        <div class="row">
-          <h2>How to Participate</h2>
-          <ul>
-            <li>Login with your Github account.</li>
-            <li>Download the start kit for the <a href="https://github.com/gppc-dev/startkit/tree/master">classic</a> or <a href="https://github.com/gppc-dev/startkit/tree/anyangle">anyangle</a> track.</li>
-            <li>Read the submission instructions and integrate your solving technique.</li>
-            <li>Submit your first entry!</li>
-            <li>Track your progress via the leaderboard!</li>
-          </ul>
-        </div>
-        
-        <div class="row">
-          <h2>Evaluation</h2>
-          <p>All GPPC<sup>2</sup> submissions are evaluated using a standard benchmark problem set. These problems comprise grid maps and 
-            pathfinding instances that are drawn from real applications and/or which are synthetically generated.</p>
-          <p>The evaluation process is threefold: (i) (optional) offline preprocessing, where auxiliary data can be generated; 
-            (ii) offline validation, which checks that every test problem can be successfully solved and; (iii) online evaluation, where 
-            algorithmic performance is measured according to several distinct metrics (see our website for the full details). A submission 
-            is considered successful if it passes validation and solves every problem during evaluation.</p>
-        </div>
-
-        <div class="row">
-          <h2>Ranking and Results</h2>
-          <p>
-            In GPPC<sup>2</sup> there is no single winner but a pareto-frontier of undominated entries. 
-            This approach reflects the many distinct settings where Grid-based Path Planning is applied, 
-            and where performance is often regarded from different perspectives. 
-          </p>
-            Authors of successful submissions, which are undominated for any period during a given year, 
-            will be invited to co-author the annual report. The report will appear in the archival proceedings 
-            of the International Symposium on Combinatorial Search (SoCS).
-          <p>
-
-          </p>
-        </div>
-
-        <div class="row">
-          <h2>Important Dates</h2>
-          <p><b>Submission Deadline:</b> None! Submit anytime!</p>
-          <p><b>Annual Report Deadline:</b> to be eligible for inclusion in the next annual report, undominated submissions must be received by 1st May.          </p>
-        </div>        
-
-
-        <div class="row">
-          <h2>Find Us on Discord</h2>
-          <p>
-            Once login, click the discord button in the app bar and join our discussion server and meet all other participants. 
-            We are happy to answer any question there. 
-
-          </p>
-
-        </div>
-    
-      </div>
-      <div class="right-column">
-        <div class="row">
-          <h2>Related Links</h2>
-          <p>
-              <a href="https://movingai.com/">Moving AI</a>
-              <br>
-              <a href="https://movingai.com/GPPC/">History GPPC Events</a>
-              <br>
-              <a href="https://movingai.com/GPPC/GPPC.pdf">2012 GPPC presentation</a>
-              <br>
-              <a href="https://movingai.com/GPPC/GPPC2013.pdf">2013 GPPC presentation</a>
-              <br>
-              <a href="https://movingai.com/GPPC/GPPC2014.pdf">2014 GPPC presentation</a>
-              <br>
-              <a href="https://movingai.com/GPPC/detail.html">History GPPC Results</a>
-          </p>
-          <h2>Related Publications</h2>
-          <p>
-            <a href="https://ojs.aaai.org/index.php/SOCS/article/download/18364/18155">The grid-based path planning competition: 2014 entries and results</a>
-            <a href="https://ojs.aaai.org/index.php/SOCS/article/download/21770/21534">Benchmarks for Pathfinding Search: Iron Harvest</a>
-            <a href="https://ojs.aaai.org/index.php/AIIDE/article/view/5228/5084">Pathfinding and Abstraction with Dynamic Terrain Costs</a>
-            <a href="https://www.aaai.org/ocs/index.php/SOCS/SOCS18/paper/view/17964/17111">Benchmarks for Pathfinding in 3d Voxel Space</a>
-          </p>
-
+    <div class="Container">
+      <div class="GridRow">
+        <div class="left-column">
+          <div class="row">
+            <h2>The Competition</h2>
+            <p>Computing paths for moving agents is a core challenge in many application areas, such as robotics and computer games. 
+              Grid-based models offer a simple and effective way to tackle this problem, with many new works appearing throughout the 
+              academic literature. Research in this area is most often motivated by practical considerations, and the resulting algorithmic 
+              techniques usually come with tradeoffs, such as solution quality vs. runtime performance vs. compute resource costs 
+              (CPU, memory etc.). The Grid-Based Path Planning Competition (GPPC<sup>2</sup>) is a forum for tracking and disseminating state-of-the-art 
+              progress in the area. It is the fourth edition of the competition, with previous <a href="https://movingai.com/GPPC/">competitions in 2012, 2013 and 2014</a>.</p>
+            <p>
+              The goals of the competition are: 
+              <ul>
+                <li>To identify important topics in Grid-based Path Planning and to establish clear baselines for state-of-the-art performance.</li>
+                <li>To promote best practice for experimental evaluation, including suitable metrics, analysis methods and benchmarking techniques.</li>
+                <li>To disseminate results to the broader community and track progress over time.</li>
+                <li>To promote and grow research in the area of Grid-based Path Planning.</li>
+              </ul>
+            </p>
+            <p>
+              We invite submissions from established researchers, active practitioners and interested students. Participation in the competition 
+              can help to grow confidence in the practical suitability of existing (in-production) methods or in newly proposed algorithmic techniques. 
+            </p>
+          </div>
           
+          <div class="row">
+            <h2>Competition Setup</h2>
+            <p>GPPC<sup>2</sup> currently measures progress in two distinct tracks:
+              <ul>
+                <li>Classical track, which is 8-connected pathfinding on a static grid map
+                </li>
+                <li>
+                  Any-angle track, where grid paths are not restricted to eight directions.
+                </li>
+              </ul>
+            </p>
+            <p>
+              Both tracks run continuously and submissions are welcome at any time. Participants can submit multiple times and their submission will be evaluated automatically. Results are available in real-time and progress in the competition is indicated using a live leaderboard. 
+            </p>
+            <p>
+              On an annual basis a snapshot of results will be taken and used to create a report. This report will summarise the advances made through the year and the current state of the art. A summary of these results will be presented at the next edition of the International Symposium on Combinatorial Search (SoCS).
+            </p>
+          </div>
+          
+          <div class="row">
+            <h2>How to Participate</h2>
+            <ul>
+              <li>Login with your Github account.</li>
+              <li>Download the start kit for the <a href="https://github.com/gppc-dev/startkit/tree/master">classic</a> or <a href="https://github.com/gppc-dev/startkit/tree/anyangle">anyangle</a> track.</li>
+              <li>Read the submission instructions and integrate your solving technique.</li>
+              <li>Submit your first entry!</li>
+              <li>Track your progress via the leaderboard!</li>
+            </ul>
+          </div>
+          
+          <div class="row">
+            <h2>Evaluation</h2>
+            <p>All GPPC<sup>2</sup> submissions are evaluated using a standard benchmark problem set. These problems comprise grid maps and 
+              pathfinding instances that are drawn from real applications and/or which are synthetically generated.</p>
+            <p>The evaluation process is threefold: (i) (optional) offline preprocessing, where auxiliary data can be generated; 
+              (ii) offline validation, which checks that every test problem can be successfully solved and; (iii) online evaluation, where 
+              algorithmic performance is measured according to several distinct metrics (see our website for the full details). A submission 
+              is considered successful if it passes validation and solves every problem during evaluation.</p>
+          </div>
+  
+          <div class="row">
+            <h2>Ranking and Results</h2>
+            <p>
+              In GPPC<sup>2</sup> there is no single winner but a pareto-frontier of undominated entries. 
+              This approach reflects the many distinct settings where Grid-based Path Planning is applied, 
+              and where performance is often regarded from different perspectives. 
+            </p>
+              Authors of successful submissions, which are undominated for any period during a given year, 
+              will be invited to co-author the annual report. The report will appear in the archival proceedings 
+              of the International Symposium on Combinatorial Search (SoCS).
+            <p>
+  
+            </p>
+          </div>
+  
+          <div class="row">
+            <h2>Important Dates</h2>
+            <p><b>Submission Deadline:</b> None! Submit anytime!</p>
+            <p><b>Annual Report Deadline:</b> to be eligible for inclusion in the next annual report, undominated submissions must be received by 1st May.          </p>
+          </div>        
+  
+  
+          <div class="row">
+            <h2>Find Us on Discord</h2>
+            <p>
+              Once login, click the discord button in the app bar and join our discussion server and meet all other participants. 
+              We are happy to answer any question there. 
+  
+            </p>
+  
+          </div>
+      
         </div>
+        <div class="right-column">
+          <div class="row">
+            <h2>Related Links</h2>
+            <p>
+                <a href="https://movingai.com/">Moving AI</a>
+                <br>
+                <a href="https://movingai.com/GPPC/">History GPPC Events</a>
+                <br>
+                <a href="https://movingai.com/GPPC/GPPC.pdf">2012 GPPC presentation</a>
+                <br>
+                <a href="https://movingai.com/GPPC/GPPC2013.pdf">2013 GPPC presentation</a>
+                <br>
+                <a href="https://movingai.com/GPPC/GPPC2014.pdf">2014 GPPC presentation</a>
+                <br>
+                <a href="https://movingai.com/GPPC/detail.html">History GPPC Results</a>
+            </p>
+            <h2>Related Publications</h2>
+            <p>
+              <a href="https://ojs.aaai.org/index.php/SOCS/article/download/18364/18155">The grid-based path planning competition: 2014 entries and results</a>
+              <a href="https://ojs.aaai.org/index.php/SOCS/article/download/21770/21534">Benchmarks for Pathfinding Search: Iron Harvest</a>
+              <a href="https://ojs.aaai.org/index.php/AIIDE/article/view/5228/5084">Pathfinding and Abstraction with Dynamic Terrain Costs</a>
+              <a href="https://www.aaai.org/ocs/index.php/SOCS/SOCS18/paper/view/17964/17111">Benchmarks for Pathfinding in 3d Voxel Space</a>
+            </p>
+  
+            
+          </div>
+        </div>
+  
       </div>
-
     </div>
+    
    
 	 
   </body>

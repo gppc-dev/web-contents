@@ -1,9 +1,15 @@
 .row {
     width: 100%;
 }
+.Container{
+    width:100%;
+    text-align: center;
+}
 .GridRow {
     width: 100%;
+    max-width: 1350px;
     text-align: left;
+    margin: auto;
 }
 .text-center {
     text-align: center;
