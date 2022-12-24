@@ -16,7 +16,51 @@
     <div class="GridRow">
         
             <div class="row">
-              <h2></h2>
+                <h2>How will my submission be evaluated?</h2>
+                <p>Evaluation servers will clone the submitted code, build docker containers using base 
+                    docker image "eggeek01/gppc2021:gppc2021-base", and install packages listed in "apt.txt" 
+                    using apt-get. Please make sure the packages listed in apt.txt are available for apt-get on Ubuntu 20. </p>
+                <p>Docker image "eggeek01/gppc2021:gppc2021-base" is a modified Ubuntu 20 image, with make, cmake, build-essential and libboost-all-dev packages installed on default.</p>
+                <p>Evaluation servers will compile the submitted code in docker containers using the "compile.sh".</p>
+                <p>The evaluation involves three steps:</p>
+                <ul>
+                    <li>Preprocessing: If the implementation support preprocessing map data, we run the submitted program with the "-pre" flag for all the benchmark maps. All preprocessing data should be stored in index_data/ of the current working directory. 
+                        These data will be accessible in validation and benchmark steps.</li>
+                    <li>Validation: In this step, we run the submitted program with the "-check" flag, and validate the correctness of outputs.</li>
+                    <li>Benchmark: In this step, we run the submitted program with the "-run" flag, and measure the performance of the submitted program.</li>
+                </ul>
+                <p>The benchmark step guarantees that only one program is running on one computer.</p>
+                <p>Please note, we will manually review the code when drafting the annual report to prevent any potential violation of fairness.</p>
+            <h2>What are the evaluation parameters?</h2>
+            <ul>
+                <li>The evaluation server gives one CPU to the submitted program. </li>
+                <li>If the program support multi-thread preprocessing, we give 4 CPUs for preprocessing.</li>
+                <li>The preprocessing runtime is limited to 3 days per map, as some large benchmark maps may be time-consuming for preprocessing.</li>
+                <li>The validation and benchmark runtime is limited to 4 hours per map. </li>
+            </ul>
+            <h2>How many submissions are allowed?</h2>
+                <p>You can submit as many as you can, but only one submission can be evaluated at the same time.</p>
+            <h2>Can I submit as part of a team?</h2>
+                <p>Yes, you can. We will collect team information from participants.</p>
+            <h2>My submission failed evaluation, what should I do now?</h2>
+                <P>Read the error message and progress log in submission history. 
+                    Try to debug your program locally on the same map.
+                    Contact us on the discord server to seek further help.
+                </P>
+            <h2>What does each metric on the leaderboard mean?</h2>
+            <ul>
+                <li>Total Time (seconds): This is the total time to find the solution to all problems.</li>
+                <li>Average Time (ns): This is the average time in nanoseconds to find a single path.</li>
+                <li>Average Start Time (20 Steps) (ns): This is the average time in nanoseconds to find the first 20 steps of a path. This measures how quickly a path is available to follow, which is important in real-time applications such as games or robotics.</li>
+                <li>Average Max Time per Segment (ns): This is the average of the maximum time required to produce any individual segment (any part of a start-to-target path, for example, a single action, a set of actions, or the complete path.). This measures the worst-case real-time performance.</li>
+                <li>Average Length: This is the average length of a returned path. If an entry is optimal on long paths and suboptimal on short paths this will be close to the average length, since most of the length comes from the longest paths.</li>
+                <li>Suboptimality: This is the average suboptimality of each path. If an entry is optimal on long paths and highly sub-optimal on short paths this measure will be large since
+                    most paths are short paths.</li>
+                <li>Max RAM Usage: The memory usage in MB after running the full problem set of a map minus the memory usage before running. </li>RAM (before): This is the memory usage in MB after loading the pre-computed data.
+                <li>Storage: This is the disk space used for all the precomputed storage.</li>
+                <li>Precomputation time: This is the time (in minutes) required for the full pre-computation. Entries that perform parallel pre-computation are marked with a † in the results table in the next section.</li>
+            </ul>
+
             </div>
     </div>
    
