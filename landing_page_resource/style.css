@@ -41,3 +41,6 @@
 .description-block{
     text-align:left;
 }
+td {
+    border-bottom:  1px solid black;
+}
