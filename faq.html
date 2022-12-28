@@ -16,11 +16,12 @@
     <div class="GridRow">
         
             <div class="row">
-                <h2>How will my submission be evaluated?</h2>
-                <p>Evaluation servers will clone the submitted code, build docker containers using base 
-                    docker image "eggeek01/gppc2021:gppc2021-base", and install packages listed in "apt.txt" 
-                    using apt-get. Please make sure the packages listed in apt.txt are available for apt-get on Ubuntu 20. </p>
-                <p>Docker image "eggeek01/gppc2021:gppc2021-base" is a modified Ubuntu 20 image, with make, cmake, build-essential and libboost-all-dev packages installed on default.</p>
+                <h3>How will my submission be evaluated?</h3>
+                <p>Evaluation servers will clone the submitted code, build docker containers using a ubuntu docker image, and install packages listed in "apt.txt" 
+                    using apt-get. Please make sure the packages listed in apt.txt are available for apt-get on Ubuntu 20.04. </p>
+                <p>We use a modified modified Ubuntu 20.04 image, with make, cmake, build-essential and libboost-all-dev packages installed on default. 
+                    You can use an example Dockerfile in the start-kit to build a docker image and test your implementation in a docker container.
+                </p>
                 <p>Evaluation servers will compile the submitted code in docker containers using the "compile.sh".</p>
                 <p>The evaluation involves three steps:</p>
                 <ul>
@@ -31,35 +32,64 @@
                 </ul>
                 <p>The benchmark step guarantees that only one program is running on one computer.</p>
                 <p>Please note, we will manually review the code when drafting the annual report to prevent any potential violation of fairness.</p>
-            <h2>What are the evaluation parameters?</h2>
+            <h3>What are the evaluation parameters?</h3>
             <ul>
                 <li>The evaluation server gives one CPU to the submitted program. </li>
                 <li>If the program support multi-thread preprocessing, we give 4 CPUs for preprocessing.</li>
                 <li>The preprocessing runtime is limited to 3 days per map, as some large benchmark maps may be time-consuming for preprocessing.</li>
                 <li>The validation and benchmark runtime is limited to 4 hours per map. </li>
             </ul>
-            <h2>How many submissions are allowed?</h2>
+            <h3>How do I test my implementation.</h3>
+                <p>You can use any <a href="https://movingai.com/benchmarks/mapf/index.html">Moving AI MAPF benchmark instance</a> to test your implementation.</p>
+            <h3>How many submissions are allowed?</h3>
                 <p>You can submit as many as you can, but only one submission can be evaluated at the same time.</p>
-            <h2>Can I submit as part of a team?</h2>
+            <h3>Can I submit as part of a team?</h3>
                 <p>Yes, you can. We will collect team information from participants.</p>
-            <h2>My submission failed evaluation, what should I do now?</h2>
+            <h3>My submission failed evaluation, what should I do now?</h3>
                 <P>Read the error message and progress log in submission history. 
                     Try to debug your program locally on the same map.
                     Contact us on the discord server to seek further help.
                 </P>
-            <h2>What does each metric on the leaderboard mean?</h2>
-            <ul>
-                <li>Total Time (seconds): This is the total time to find the solution to all problems.</li>
-                <li>Average Time (ns): This is the average time in nanoseconds to find a single path.</li>
-                <li>Average Start Time (20 Steps) (ns): This is the average time in nanoseconds to find the first 20 steps of a path. This measures how quickly a path is available to follow, which is important in real-time applications such as games or robotics.</li>
-                <li>Average Max Time per Segment (ns): This is the average of the maximum time required to produce any individual segment (any part of a start-to-target path, for example, a single action, a set of actions, or the complete path.). This measures the worst-case real-time performance.</li>
-                <li>Average Length: This is the average length of a returned path. If an entry is optimal on long paths and suboptimal on short paths this will be close to the average length, since most of the length comes from the longest paths.</li>
-                <li>Suboptimality: This is the average suboptimality of each path. If an entry is optimal on long paths and highly sub-optimal on short paths this measure will be large since
-                    most paths are short paths.</li>
-                <li>Max RAM Usage: The memory usage in MB after running the full problem set of a map minus the memory usage before running. </li>RAM (before): This is the memory usage in MB after loading the pre-computed data.
-                <li>Storage: This is the disk space used for all the precomputed storage.</li>
-                <li>Precomputation time: This is the time (in minutes) required for the full pre-computation. Entries that perform parallel pre-computation are marked with a † in the results table in the next section.</li>
-            </ul>
+            <h3>What does each metric on the leaderboard mean?</h3>
+                <table>
+                    <tr>
+                        <td><b>Total Time (seconds)</b></td>
+                        <td>This is the total time to find the solution to all problems.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Average Time (ns)</b></td>
+                        <td>This is the average time in nanoseconds to find a single path.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Average Start Time (ns)</b></td>
+                        <td>This is the average time in nanoseconds to find the first 20 steps of a path. This measures how quickly a path is available to follow, which is important in real-time applications such as games or robotics.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Average Max Time per Segment (ns)</b></td>
+                        <td>This is the average of the maximum time required to produce any individual segment (any part of a start-to-target path, for example, a single action, a set of actions, or the complete path.). This measures the worst-case real-time performance.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Average Length</b></td>
+                        <td>This is the average length of a returned path. If an entry is optimal on long paths and suboptimal on short paths this will be close to the average length, since most of the length comes from the longest paths.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Suboptimality</b></td>
+                        <td>This is the average suboptimality of each path. If an entry is optimal on long paths and highly sub-optimal on short paths this measure will be large since
+                            most paths are short paths.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Max RAM Usage</b></td>
+                        <td>The memory usage in MB after running the full problem set of a map minus the memory usage before running (but after loading the pre-computed data).</td>
+                    </tr>
+                    <tr>
+                        <td><b>Storage</b></td>
+                        <td>This is the disk space used for all the precomputed storage.</td>
+                    </tr>
+                    <tr>
+                        <td><b>Precomputation time</b></td>
+                        <td>This is the time (in minutes) required for the full pre-computation. Entries that perform parallel pre-computation are marked with a † in the results table in the next section.</td>
+                    </tr>
+                </table>
 
             </div>
     </div>
