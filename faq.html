@@ -17,9 +17,9 @@
         
             <div class="row">
                 <h3>How will my submission be evaluated?</h3>
-                <p>Evaluation servers will clone the submitted code, build docker containers using a ubuntu docker image, and install packages listed in "apt.txt" 
+                <p>Evaluation servers will clone the submitted code, build docker containers using an Ubuntu docker image, and install packages listed in "apt.txt" 
                     using apt-get. Please make sure the packages listed in apt.txt are available for apt-get on Ubuntu 20.04. </p>
-                <p>We use a modified modified Ubuntu 20.04 image, with make, cmake, build-essential and libboost-all-dev packages installed on default. 
+                <p>We use a modified Ubuntu 20.04 image, with make, cmake, build-essential and libboost-all-dev packages installed on default. 
                     You can use an example Dockerfile in the start-kit to build a docker image and test your implementation in a docker container.
                 </p>
                 <p>Evaluation servers will compile the submitted code in docker containers using the "compile.sh".</p>
@@ -94,9 +94,25 @@
                 </table>
 
             </div>
+        
+        
+        <h3>How to update the startkit?</h3>
+            <p>Updating the startkit involves pulling the immutable files from the respective tracks.  The mutable file Entry.cpp has also been update to bring in line with minor changes to function signature, but must be handled manually.</p>
+            <p>Included in update is pulling update LICENSE file, the repo license has not changed, just updated license holder information.</p>
+            <h4>Classic Track</h4>
+                <code>git remote add upstream https://github.com/gppc-dev/startkit-classic.git<br>
+                    git fetch upstream --no-tags master<br>
+                    git restore --staged --source=upstream/master Entry.h GPPC.h main.cpp ScenarioLoader.cpp ScenarioLoader.h Timer.cpp Timer.h validator/ValidatePath.hpp version.txt<br>
+                    git restore --staged --source=upstream/master LICENSE CONTRIBUTERS<br>
+                    git commit -m "updated to latest startkit-classic"<br>
+                    git push origin</code>
+            <h4>Anyanlge Track</h4>
+                <code>git remote add upstream https://github.com/gppc-dev/startkit-anyangle.git<br>
+                    git fetch upstream --no-tags master<br>
+                    git restore --staged --source=upstream/master Entry.h GPPC.h main.cpp ScenarioLoader.cpp ScenarioLoader.h Timer.cpp Timer.h validator/Box.hpp validator/BresenhamRay.hpp validator/Point.hpp validator/ValidatePath.hpp validator/bit_table.hpp validator/frac.hpp validator/inx.hpp version.txt<br>
+                    git restore --staged --source=upstream/master LICENSE CONTRIBUTERS<br>
+                    git commit -m "updated to latest startkit-anyangle"</code>
     </div>
-   
-	 
   </body>
 </html>
 
